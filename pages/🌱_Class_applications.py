@@ -83,11 +83,3 @@ with tabs[2]:
             st.pyplot(fig)
         else:
             st.warning("Please enter some text to generate a word cloud.")
-with tabs[3]:
-    st.caption("https://ipa.typeit.org/")
-    
-    # URL you want to embed
-    url_to_embed = "https://ipa.typeit.org/"
-    
-    # Embed the URL using an iframe
-    components.iframe(url_to_embed, width=600, height=600, scrolling=True)
