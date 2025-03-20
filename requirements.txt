@@ -1,3 +1,12 @@
 streamlit
-gtts
+requests
 pandas
+numpy
+matplotlib
+qrcode
+Pillow
+wordcloud
+gtts
+pydub
+librosa
+soundfile
