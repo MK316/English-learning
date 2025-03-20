@@ -8,7 +8,7 @@ st.caption("_Since Spring 2025_")
 st.markdown('This platform provides coding-based, customized apps that assist in learning English. More apps will be updated continuously. Welcome aboard.')
 
 # URL of the raw audio file on GitHub
-audio_url = 'https://github.com/MK316/English-learning/raw/main/audio/intro.wav'
+audio_url = 'https://github.com/MK316/English-learning/raw/main/audio/intro.mp3'
 
 # Display the audio player in Streamlit
 st.audio(audio_url, format='audio/mp3', start_time=0)
