@@ -19,7 +19,7 @@ image_url = "https://github.com/MK316/English-learning/raw/main/images/EnglishLe
 # Load and resize the image
 response = requests.get(image_url)
 img = Image.open(BytesIO(response.content))
-img = img.resize((500, 500))  # Set custom width and height
+img = img.resize((700, 400))  # Set custom width and height
 
 st.image(img, caption="©️ MK316: Practice Makes Perfect")
 
