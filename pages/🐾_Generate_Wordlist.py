@@ -47,7 +47,7 @@ def generate_wordcloud(text):
 st.set_page_config(page_title="Text Analysis Tools", page_icon="📝")
 st.title('Try apps with your story')
 
-tab1 = st.tabs(["🌱 Word Frequency", "💬 Word Cloud"])
+tab1, tab2 = st.tabs(["🌱 Word Frequency", "💬 Word Cloud"])
 
 
 with tab1:
