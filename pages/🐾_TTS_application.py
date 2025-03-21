@@ -55,7 +55,7 @@ with tabs[0]:
 with tabs[1]:
     st.subheader("📝 Read by Sentences")
     text_input = st.text_area("Enter the text you want to split and convert to audio per sentence:")
-    language = st.selectbox("Choose a language for audio output:", ["Korean", "English (American)", "English (British)", "Russian", "Spanish", "French", "Italian", "Japanese"])
+    language = st.selectbox("Choose a language for audio output:", ["English (American)", "English (British)"])
 
     split_button = st.button("Split Text & Generate Audio")
     
@@ -65,15 +65,24 @@ with tabs[1]:
         nltk.download('punkt')
         from nltk.tokenize import sent_tokenize
 
-        # Selecting the language for nltk tokenizer
-        if language in ["Russian", "Italian", "French", "Spanish"]:
-            sentences = sent_tokenize(text_input, language=language.lower())
-        else:
-            sentences = sent_tokenize(text_input)
+        # Tokenize the text into sentences
+        sentences = sent_tokenize(text_input)
+
+        # Mapping language selections to gTTS language codes and TLDs
+        lang_codes = {
+            "English (American)": ("en", 'com'),
+            "English (British)": ("en", 'co.uk')
+        }
+        language_code, tld = lang_codes[language]
 
         for i, sentence in enumerate(sentences, 1):
             st.write(f"{i}. {sentence}")
-            tts = gTTS(text=sentence, lang=lang_codes[language][0], slow=False)
+            # Generate TTS for each sentence
+            if tld:
+                tts = gTTS(text=sentence, lang=language_code, tld=tld, slow=False)
+            else:
+                tts = gTTS(text=sentence, lang=language_code, slow=False)
+                
             speech = io.BytesIO()
             tts.write_to_fp(speech)
             speech.seek(0)
