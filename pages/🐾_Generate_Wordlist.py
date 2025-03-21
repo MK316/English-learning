@@ -57,7 +57,7 @@ with tab1:
     stopwords = {word.strip().lower() for word in stopword_input.split(',')} if stopword_input else set()
     proper_noun_input = st.text_area("3️⃣ (Optional) Enter proper nouns separated by commas:", key="proper_noun_input")
     proper_nouns = {word.strip() for word in proper_noun_input.split(',')} if proper_noun_input else set()
-    if st.button("Create Dataframe", key="create_df_wf"):
+    if st.button("Create Wordlist (Excel file)", key="create_df_wf"):
         if text_input_wf:
             df = create_word_frequency_dataframe(text_input_wf, stopwords, proper_nouns)
             st.dataframe(df)
