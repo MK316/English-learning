@@ -60,13 +60,9 @@ with tabs[1]:
     split_button = st.button("Split Text & Generate Audio")
     
     if split_button and text_input:
-        # Import the necessary function from nltk
-        import nltk
-        nltk.download('punkt')
-        from nltk.tokenize import sent_tokenize
-
-        # Tokenize the text into sentences
-        sentences = sent_tokenize(text_input)
+        # Using re module to split the text into sentences
+        import re
+        sentences = re.split(r'[.!?]\s+', text_input)
 
         # Mapping language selections to gTTS language codes and TLDs
         lang_codes = {
@@ -76,14 +72,15 @@ with tabs[1]:
         language_code, tld = lang_codes[language]
 
         for i, sentence in enumerate(sentences, 1):
-            st.write(f"{i}. {sentence}")
-            # Generate TTS for each sentence
-            if tld:
-                tts = gTTS(text=sentence, lang=language_code, tld=tld, slow=False)
-            else:
-                tts = gTTS(text=sentence, lang=language_code, slow=False)
+            if sentence:  # Ensure the sentence is not just whitespace
+                st.write(f"{i}. {sentence}")
+                # Generate TTS for each sentence
+                if tld:
+                    tts = gTTS(text=sentence, lang=language_code, tld=tld, slow=False)
+                else:
+                    tts = gTTS(text=sentence, lang=language_code, slow=False)
                 
-            speech = io.BytesIO()
-            tts.write_to_fp(speech)
-            speech.seek(0)
-            st.audio(speech.getvalue(), format='audio/mp3')
+                speech = io.BytesIO()
+                tts.write_to_fp(speech)
+                speech.seek(0)
+                st.audio(speech.getvalue(), format='audio/mp3')
