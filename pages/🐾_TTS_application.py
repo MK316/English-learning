@@ -9,7 +9,7 @@ import streamlit.components.v1 as components  # For embedding YouTube videos
 from gtts import gTTS
 import io
 
-tabs = st.tabs(["🔊 Text-to-Speech", "📝 Listen by stentences"])
+tabs = st.tabs(["🔊 Text-to-Speech", "🍒 Listen by stentences"])
 
 # Text-to-Speech tab
 with tabs[0]:
