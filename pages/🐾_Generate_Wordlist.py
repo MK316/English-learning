@@ -47,10 +47,10 @@ def generate_wordcloud(text):
 st.set_page_config(page_title="Text Analysis Tools", page_icon="📝")
 st.title('Try apps with your story')
 
-tab1, tab2 = st.tabs(["💬 Word Cloud", "🌱 Word Frequency"])
+tab1 = st.tabs(["🌱 Word Frequency", "💬 Word Cloud"])
 
 
-with tab2:
+with tab1:
     st.header("Generate Word Frequency Dataframe")
     text_input_wf = st.text_area("Paste your text here:", key="wf_input")
     stopword_input = st.text_area("Enter stopwords separated by commas:", key="stopword_input")
@@ -64,3 +64,12 @@ with tab2:
             st.markdown(get_table_download_link_csv(df), unsafe_allow_html=True)
         else:
             st.error("Please paste some text to generate the dataframe.")
+
+with tab2:
+    st.header("Generate a Word Cloud")
+    text_input_wc = st.text_area("Paste your text here:", key="wc_input")
+    if st.button("Generate Word Cloud", key="generate_wc"):
+        if text_input_wc:
+            generate_wordcloud(text_input_wc)
+        else:
+            st.error("Please paste some text to generate the word cloud.")
