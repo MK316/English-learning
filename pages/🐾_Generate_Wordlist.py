@@ -52,10 +52,10 @@ tab1, tab2 = st.tabs(["🌱 Word Frequency", "💬 Word Cloud"])
 
 with tab1:
     st.header("Generate Word Frequency Dataframe")
-    text_input_wf = st.text_area("Paste your text here:", key="wf_input")
-    stopword_input = st.text_area("(Optional) Enter stopwords (words to exclude in the list - e.g., a, the, to, he, ...) separated by commas:", key="stopword_input")
+    text_input_wf = st.text_area("1️⃣ Paste your text here:", key="wf_input")
+    stopword_input = st.text_area("2️⃣ (Optional) Enter stopwords (words to exclude in the list - e.g., a, the, to, he, ...) separated by commas:", key="stopword_input")
     stopwords = {word.strip().lower() for word in stopword_input.split(',')} if stopword_input else set()
-    proper_noun_input = st.text_area("(Optional) Enter proper nouns separated by commas:", key="proper_noun_input")
+    proper_noun_input = st.text_area("3️⃣ (Optional) Enter proper nouns separated by commas:", key="proper_noun_input")
     proper_nouns = {word.strip() for word in proper_noun_input.split(',')} if proper_noun_input else set()
     if st.button("Create Dataframe", key="create_df_wf"):
         if text_input_wf:
