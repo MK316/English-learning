@@ -12,7 +12,7 @@ resources = {
     "suno": {
         "url": "https://suno.com",
         "description": """
-        Suno AI revolutionizes learning and entertainment with its advanced audio tools, including audio books, podcasts, and innovative song generation for an immersive audio experience.
+        Suno AI revolutionizes learning and entertainment with its advanced audio tools, including innovative song generation for an immersive audio experience.
         """
     }
 }
