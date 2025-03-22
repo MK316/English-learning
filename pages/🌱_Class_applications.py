@@ -9,13 +9,9 @@ import streamlit.components.v1 as components  # For embedding YouTube videos
 from gtts import gTTS
 import io
 
-# Function to create word cloud
-def create_wordcloud(text):
-    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
-    return wordcloud
 
 # Streamlit tabs
-tabs = st.tabs(["📈 QR", "⏳ Timer", "⛅ Word Cloud"])
+tabs = st.tabs(["📈 QR", "⏳ Timer"])
 
 # QR Code tab
 with tabs[0]:
@@ -62,24 +58,3 @@ with tabs[1]:
     st.components.v1.html(f"""
         <iframe src="{huggingface_space_url}" width="100%" height="600px" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     """, height=600)
-
-
-
-# Word Cloud tab
-with tabs[2]:
-    st.subheader("🌌 Word Cloud Generator")
-
-    # Input text for generating the word cloud
-    user_input = st.text_area("Enter text to generate a word cloud:")
-
-    # Button to generate the word cloud
-    if st.button("Generate Word Cloud"):
-        if user_input.strip():
-            # Generate word cloud only when there is valid input
-            wordcloud = create_wordcloud(user_input)
-            fig, ax = plt.subplots()
-            ax.imshow(wordcloud, interpolation='bilinear')
-            ax.axis("off")
-            st.pyplot(fig)
-        else:
-            st.warning("Please enter some text to generate a word cloud.")
