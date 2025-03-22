@@ -19,8 +19,8 @@ resources = {
 
 # Streamlit webpage layout
 def main():
-    st.title('🐳 Online Resources for Learning and Productivity')
-    st.subheader('Explore these powerful online tools that can enhance your learning and productivity.')
+    st.markdown('### 🐳 Online Resources for Learning and Productivity')
+    st.write('Explore these powerful online tools that can enhance your learning and productivity.')
 
     for resource_name, resource_info in resources.items():
         st.markdown(f"### 🎹 {resource_name}")
