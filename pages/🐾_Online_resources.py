@@ -6,13 +6,13 @@ resources = {
     "speechnotes.co": {
         "url": "https://www.speechnotes.co",
         "description": """
-        Speechnotes is a powerful speech-enabled online notepad, designed to empower your ideas by implementing a clean & efficient design, so you can focus on your thoughts. This tool provides a user-friendly interface for continuous dictation, using advanced speech recognition technology to transcribe your speech into text in real-time. It's highly useful for quickly capturing long-form articles, blogs, and notes with your voice.
+        Speechnotes offers a streamlined, speech-to-text notepad to capture your thoughts quickly and efficiently. Ideal for dictating essays or notes on the go!
         """
     },
     "suno": {
         "url": "https://suno.com",
         "description": """
-        Suno (if this is the intended 'Suno', please replace with the correct URL and description if different) is an innovative platform leveraging advanced audio processing technology. It offers a range of services from audio books and podcasts to comprehensive auditory tools for education and entertainment. This resource is excellent for users looking to access a broad spectrum of audio content for learning, entertainment, or professional development.
+        Suno AI revolutionizes learning and entertainment with its advanced audio tools, including audio books, podcasts, and innovative song generation for an immersive audio experience.
         """
     }
 }
