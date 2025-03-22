@@ -26,7 +26,7 @@ with tabs[0]:
         caption = st.text_input("Enter a caption (optional):", key="qr_caption")
     with col3:
         st.write("Generate a QR code")  # Add spacing for alignment
-        generate_qr_button = st.button("🔆 Click to Get QR", key="generate_qr")
+        generate_qr_button = st.button("🔆 Click Here", key="generate_qr")
 
     if generate_qr_button and qr_link:
         # ✅ Generate the QR code
