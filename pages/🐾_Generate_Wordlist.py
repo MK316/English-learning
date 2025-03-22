@@ -45,13 +45,13 @@ def generate_wordcloud(text):
     st.pyplot(plt)
 
 st.set_page_config(page_title="Text Analysis Tools", page_icon="📝")
-st.title('Try apps with your story')
+st.markdown('## 🌼 Try apps with your story')
 
 tab1, tab2 = st.tabs(["🌱 Word Frequency", "💬 Word Cloud"])
 
 
 with tab1:
-    st.header("Generate Word Frequency Dataframe")
+    st.write("Generate Word Frequency Excel file (csv worksheet)")
     text_input_wf = st.text_area("1️⃣ Paste your text here:", key="wf_input")
     stopword_input = st.text_area("2️⃣ (Optional) Enter stopwords (words to exclude in the list - e.g., a, the, to, he, ...) separated by commas:", key="stopword_input")
     stopwords = {word.strip().lower() for word in stopword_input.split(',')} if stopword_input else set()
